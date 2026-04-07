@@ -1,0 +1,100 @@
+/* ========== 页面加载动画 ========== */
+
+/* 定义淡入上移动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0; /* 初始完全透明 */
+    transform: translateY(30px); /* 初始位置向下偏移30像素 */
+  }
+  to {
+    opacity: 1; /* 最终完全不透明 */
+    transform: translateY(0); /* 最终位置为正常位置 */
+  }
+}
+
+/* 为文章卡片应用动画 */
+.recent-post-item {
+  animation: fadeInUp 0.6s ease-out; /* 动画持续0.6秒，缓出效果 */
+  animation-fill-mode: both; /* 保持动画开始和结束状态 */
+}
+
+/* 为不同的卡片设置不同的延迟时间，创造波浪效果 */
+.recent-post-item:nth-child(1) {
+  animation-delay: 0.1s;
+} /* 第1个卡片延迟0.1秒 */
+.recent-post-item:nth-child(2) {
+  animation-delay: 0.2s;
+} /* 第2个卡片延迟0.2秒 */
+.recent-post-item:nth-child(3) {
+  animation-delay: 0.3s;
+} /* 第3个卡片延迟0.3秒 */
+.recent-post-item:nth-child(4) {
+  animation-delay: 0.4s;
+} /* 第4个卡片延迟0.4秒 */
+.recent-post-item:nth-child(5) {
+  animation-delay: 0.5s;
+} /* 第5个卡片延迟0.5秒 */
+.recent-post-item:nth-child(6) {
+  animation-delay: 0.6s;
+} /* 第6个卡片延迟0.6秒 */
+
+.status-tag {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 3px;
+    border-radius: 6px 0 12px 0;
+    font-size: 10px;
+    color: #fff;
+    font-weight: 700;
+    transition: font-size .3s ease-out, opacity .3s ease-out;
+}
+
+.flink-list-item:hover .status-tag {
+    font-size: 0;
+    opacity: 0;
+}
+
+.status-tag-green { background-color: #599e0b; }
+.status-tag-light-yellow { background-color: #fed101; }
+.status-tag-dark-yellow { background-color: #f0b606; }
+.status-tag-red { background-color: #b90000; }
+
+/* 恢复 Twikoo 预览按钮显示 */
+#twikoo .tk-comments .el-button.tk-preview {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+#twikoo .tk-comments .el-button.tk-preview:hover {
+  opacity: 0.85 !important;
+}
+
+#twikoo .tk-comments .el-button.tk-preview {
+    position: absolute;
+    top: -40px;
+    right: 107px;
+    opacity: 0.3;
+}
+
+#twikoo .tk-comments .el-button--primary {
+    color: var(--anzhiyu-card-bg);
+    box-shadow: var(--anzhiyu-shadow-black);
+    width: 6.25rem;
+    position: absolute;
+    top: -41px;
+    right: 0px;
+    height: 32px;
+    margin-left: 0.5rem !important;
+    border-color: var(--anzhiyu-fontcolor);
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+#twikoo .tk-comments .tk-meta-input {
+    position: relative;
+    margin-top: 8px;
+    width: calc(100% - 165px);
+}
